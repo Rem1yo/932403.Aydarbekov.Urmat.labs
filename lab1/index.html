@@ -3,42 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О себе — Урмат Айдарбеков</title>
+  <title>О себе - Урмат Айдарбеков</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.5;
       background-color: #f5ebdc;
       color: #4a3222;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 20px 40px;
+      padding: 20px;
       background-color: #e8833a;
-      color: #ffffff;
+      color: white;
+      text-align: center;
     }
 
     header img {
-      border: 3px solid #ffffff;
+      border: 4px solid white;
       border-radius: 50%;
     }
 
     header h1 {
-      margin: 0;
+      margin: 10px 0 5px;
     }
 
     header p {
-      margin: 5px 0 0;
+      margin: 0;
     }
 
-    .page {
+    .content {
       display: flex;
-      gap: 30px;
-      max-width: 1000px;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 900px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -49,46 +47,58 @@
 
     aside {
       flex: 1;
-      align-self: flex-start;
-      padding: 0 20px 10px;
-      background-color: #fdf6ec;
-      border-left: 5px solid #e8833a;
     }
 
-    @media (max-width: 700px) {
-      .page {
-        flex-direction: column;
-      }
+    .block {
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      background-color: #fffaf3;
+      border: 1px solid #ecd9bf;
+      border-radius: 8px;
     }
 
-    h2 {
+    .block h2 {
+      margin-top: 0;
       color: #c4621b;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    em {
+      color: gray;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      max-width: 400px;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     input,
     textarea {
+      margin-top: 5px;
       padding: 8px;
       border: 1px solid #d9b88f;
-      border-radius: 4px;
-      font: inherit;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
     }
 
     button {
-      align-self: flex-start;
-      margin-top: 8px;
-      padding: 8px 20px;
+      width: 150px;
+      margin-top: 15px;
+      padding: 10px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       background-color: #e8833a;
-      color: #ffffff;
-      font: inherit;
+      color: white;
+      font-size: 16px;
       cursor: pointer;
     }
 
@@ -97,25 +107,30 @@
     }
 
     footer {
-      padding: 10px;
-      text-align: center;
+      padding: 5px;
       background-color: #4a3222;
       color: #f5ebdc;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .content {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="images/avatar.svg" alt="Аватар Урмата Айдарбекова" width="120" height="120">
-    <div>
-      <h1>О себе</h1>
-      <p>Урмат Айдарбеков, путешественник</p>
-    </div>
+    <h1>О себе</h1>
+    <p>Урмат Айдарбеков, путешественник</p>
   </header>
 
-  <div class="page">
+  <div class="content">
     <main>
-      <section id="skills">
+      <section id="skills" class="block">
         <h2>Навыки</h2>
         <ul>
           <li>Планирование маршрута</li>
@@ -129,33 +144,35 @@
         </ul>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="block">
         <h2>Проекты</h2>
         <p>Страны, в которых я побывал, и те, куда хочу поехать:</p>
         <ol>
-          <li>Россия — Томск</li>
+          <li>Россия, Томск</li>
           <li>Кыргызстан</li>
           <li>Япония <em>(хочу посетить)</em></li>
           <li>США <em>(хочу посетить)</em></li>
         </ol>
       </section>
 
-      <h2>Обратная связь</h2>
-      <form action="#" method="post">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" placeholder="Ваше имя">
+      <div class="block">
+        <h2>Обратная связь</h2>
+        <form action="#" method="post">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Ваше имя">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="example@mail.ru">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.ru">
 
-        <label for="message">Сообщение</label>
-        <textarea id="message" name="message" rows="5" placeholder="Напишите сообщение"></textarea>
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" rows="5" placeholder="Напишите сообщение"></textarea>
 
-        <button type="submit">Отправить</button>
-      </form>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
     </main>
 
-    <aside>
+    <aside class="block">
       <h2>Любимое место</h2>
       <p>Озеро Иссык-Куль, Кыргызстан.</p>
     </aside>
