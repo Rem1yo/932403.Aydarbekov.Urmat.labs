@@ -11,7 +11,7 @@
       column-gap: 30px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 599px) {
       #projects ol {
         column-count: 1;
       }
@@ -25,67 +25,134 @@
     <p>Урмат Айдарбеков, путешественник</p>
   </header>
 
-  <nav>
-    <a href="#skills">Навыки</a>
-    <a href="#projects">Проекты</a>
-    <a href="#place">Любимое место</a>
-    <a href="#feedback">Обратная связь</a>
+  <nav aria-label="Разделы страницы">
+    <ul class="nav-list">
+      <li><a href="#skills">Навыки</a></li>
+      <li><a href="#stats">Статистика</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#place">Любимое место</a></li>
+      <li><a href="#feedback">Обратная связь</a></li>
+    </ul>
   </nav>
 
-  <div class="content">
-    <main>
-      <section id="skills" class="block">
-        <h2>Навыки</h2>
-        <ul>
-          <li>Планирование маршрута</li>
-          <li>Знание языков:
-            <ul>
-              <li>русский</li>
-              <li>кыргызский</li>
-              <li>английский</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
+  <main class="container">
+    <section id="skills" class="block" aria-labelledby="skills-title">
+      <h2 id="skills-title">Навыки</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">🧭</span>
+          <dl class="card-info">
+            <dt>Навигация</dt>
+            <dd>Уровень: 80%</dd>
+          </dl>
+          <div class="progress" role="progressbar" aria-label="Навигация" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80">
+            <div class="progress-bar" style="width: 80%;"></div>
+          </div>
+          <p>Ориентируюсь по карте и компасу, строю маршруты в офлайн-картах.</p>
+        </article>
 
-      <section id="projects" class="block">
-        <h2>Проекты</h2>
-        <p>Страны, в которых я побывал, и те, куда хочу поехать:</p>
-        <ol>
-          <li>Россия, Томск</li>
-          <li>Кыргызстан</li>
-          <li>Япония <em>(хочу посетить)</em></li>
-          <li>США <em>(хочу посетить)</em></li>
-        </ol>
-      </section>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">🗣️</span>
+          <dl class="card-info">
+            <dt>Языки</dt>
+            <dd>Уровень: 70%</dd>
+          </dl>
+          <div class="progress" role="progressbar" aria-label="Языки" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+            <div class="progress-bar" style="width: 70%;"></div>
+          </div>
+          <p>Русский, кыргызский и английский, хватает чтобы договориться почти везде.</p>
+        </article>
 
-      <div id="feedback" class="block">
-        <h2>Обратная связь</h2>
-        <form action="#" method="post">
-          <label for="name">Имя</label>
-          <input type="text" id="name" name="name" placeholder="Ваше имя">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">📷</span>
+          <dl class="card-info">
+            <dt>Фотография</dt>
+            <dd>Уровень: 60%</dd>
+          </dl>
+          <div class="progress" role="progressbar" aria-label="Фотография" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+            <div class="progress-bar" style="width: 60%;"></div>
+          </div>
+          <p>Снимаю пейзажи и улицы, обрабатываю фото в Lightroom.</p>
+        </article>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="example@mail.ru">
-
-          <label for="message">Сообщение</label>
-          <textarea id="message" name="message" rows="5" placeholder="Напишите сообщение"></textarea>
-
-          <button type="submit" style="font-size: 16px;">Отправить</button>
-        </form>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">🗺️</span>
+          <dl class="card-info">
+            <dt>Планирование маршрута</dt>
+            <dd>Уровень: 90%</dd>
+          </dl>
+          <div class="progress" role="progressbar" aria-label="Планирование маршрута" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+            <div class="progress-bar" style="width: 90%;"></div>
+          </div>
+          <p>Считаю бюджет, бронирую жильё и билеты, учитываю погоду и сезон.</p>
+        </article>
       </div>
-    </main>
+    </section>
 
-    <aside id="place" class="block">
-      <span class="badge">Топ-1</span>
-      <h2>Любимое место</h2>
-      <p>Озеро Иссык-Куль, Кыргызстан.</p>
-      <p class="links">
-        <a href="https://ru.wikipedia.org/wiki/Иссык-Куль">Про озеро</a><br>
-        <a href="https://ru.wikipedia.org/wiki/Томск">Про Томск</a>
-      </p>
-    </aside>
-  </div>
+    <section id="stats" class="block" aria-labelledby="stats-title">
+      <h2 id="stats-title">Статистика прогресса</h2>
+      <div class="dashboard">
+        <article class="stat">
+          <h3>Страны</h3>
+          <p class="stat-value"><data value="2">2</data></p>
+          <p class="stat-note">Россия и Кыргызстан</p>
+        </article>
+
+        <article class="stat">
+          <h3>Города</h3>
+          <p class="stat-value"><data value="9">9</data></p>
+          <p class="stat-note">в которых я побывал</p>
+        </article>
+
+        <article class="stat">
+          <h3>Фото</h3>
+          <p class="stat-value"><data value="1250">1250</data></p>
+          <p class="stat-note">снято в поездках</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="content">
+      <div class="column">
+        <section id="projects" class="block">
+          <h2>Проекты</h2>
+          <p>Страны, в которых я побывал, и те, куда хочу поехать:</p>
+          <ol>
+            <li>Россия, Томск</li>
+            <li>Кыргызстан</li>
+            <li>Япония <em>(хочу посетить)</em></li>
+            <li>США <em>(хочу посетить)</em></li>
+          </ol>
+        </section>
+
+        <section id="feedback" class="block">
+          <h2>Обратная связь</h2>
+          <form action="#" method="post">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Ваше имя">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.ru">
+
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" rows="5" placeholder="Напишите сообщение"></textarea>
+
+            <button type="submit" style="font-size: 16px;">Отправить</button>
+          </form>
+        </section>
+      </div>
+
+      <aside id="place" class="block">
+        <span class="badge">Топ-1</span>
+        <h2>Любимое место</h2>
+        <p>Озеро Иссык-Куль, Кыргызстан.</p>
+        <p class="links">
+          <a href="https://ru.wikipedia.org/wiki/Иссык-Куль">Про озеро</a><br>
+          <a href="https://ru.wikipedia.org/wiki/Томск">Про Томск</a>
+        </p>
+      </aside>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2026 Урмат Айдарбеков</p>
