@@ -9,6 +9,8 @@
 | 1 | Основы HTML и структура веб-страницы | [lab1](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab1) |
 | 2 | Базовые и продвинутые возможности CSS | [lab2](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab2) |
 | 3 | Вёрстка макета с помощью Flexbox и Grid | [lab3](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab3) |
+| 4 | Основы JavaScript | [lab4](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab4) |
+| 5 | DOM и взаимодействие с элементами страницы | [lab5](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab5) |
 
 В каждой ветке есть свой README: задание, что сделано и как открыть страницу.
 
@@ -17,7 +19,7 @@
 ```bash
 git clone https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs.git
 cd 932403.Aydarbekov.Urmat.labs
-git switch lab3
+git switch lab5
 ```
 
 Автор: Урмат Айдарбеков
