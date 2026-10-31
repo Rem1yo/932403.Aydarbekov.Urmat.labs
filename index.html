@@ -36,6 +36,13 @@
   </nav>
 
   <main class="container">
+    <div class="toolbar">
+      <button type="button" id="add-skill-btn">Добавить навык</button>
+      <button type="button" id="clear-skills-btn">Очистить навыки</button>
+      <button type="button" id="toggle-skills-btn">Скрыть список навыков</button>
+      <button type="button" id="theme-btn">Тёмная тема</button>
+    </div>
+
     <section id="skills" class="block" aria-labelledby="skills-title">
       <h2 id="skills-title">Навыки</h2>
       <div class="cards">
@@ -87,6 +94,9 @@
           <p>Считаю бюджет, бронирую жильё и билеты, учитываю погоду и сезон.</p>
         </article>
       </div>
+
+      <h3>Список навыков</h3>
+      <ul id="skills-list" class="skills-list"></ul>
     </section>
 
     <section id="stats" class="block" aria-labelledby="stats-title">
