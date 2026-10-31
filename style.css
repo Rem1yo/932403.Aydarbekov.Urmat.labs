@@ -9,6 +9,11 @@
   --color-track: #3a3a3a;
   --color-progress: #ff9933;
   --color-stat-note: #e0e0e0;
+  --color-link: #b35a12;
+  --color-visited: #7a3b8f;
+  --color-field: #ffffff;
+  --color-field-border: #d9b88f;
+  --color-field-focus: #fff6e9;
   --font-main: Arial, sans-serif;
   --font-title: Georgia, serif;
 }
@@ -94,7 +99,7 @@ nav a::after {
 }
 
 nav a:hover {
-  color: var(--color-accent);
+  color: var(--color-link);
 }
 
 nav a:hover::after {
@@ -275,12 +280,12 @@ em {
 }
 
 .links a {
-  color: var(--color-accent);
+  color: var(--color-link);
   line-height: 1.8;
 }
 
 .links a:visited {
-  color: #7a3b8f;
+  color: var(--color-visited);
 }
 
 .links a:hover {
@@ -301,8 +306,10 @@ input,
 textarea {
   margin-top: 5px;
   padding: 8px;
-  border: 1px solid #d9b88f;
+  border: 1px solid var(--color-field-border);
   border-radius: 5px;
+  background-color: var(--color-field);
+  color: var(--color-text);
   font-family: var(--font-main);
   font-size: 16px;
   transition: border-color 0.3s;
@@ -311,7 +318,7 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: var(--color-accent);
-  background-color: #fff6e9;
+  background-color: var(--color-field-focus);
 }
 
 button {
@@ -343,6 +350,58 @@ footer {
   background-color: var(--color-text);
   color: var(--color-bg);
   text-align: center;
+}
+
+body.dark {
+  --color-bg: #1b1713;
+  --color-surface: #2a241e;
+  --color-text: #f0e6d8;
+  --color-heading: #ffb066;
+  --color-muted: #c9b8a3;
+  --color-border: #4a3f33;
+  --color-link: #ffa04d;
+  --color-visited: #e3a8f0;
+  --color-field: #1b1713;
+  --color-field-border: #6b5a4a;
+  --color-field-focus: #3a3128;
+}
+
+body.dark footer {
+  background-color: #120f0c;
+  color: var(--color-text);
+}
+
+.invisible {
+  display: none;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toolbar button {
+  flex: 1 1 auto;
+  width: auto;
+  margin-top: 0;
+}
+
+.skills-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+}
+
+.delete-btn {
+  width: auto;
+  margin: 0 0 0 10px;
+  padding: 4px 12px;
+  font-size: 14px;
 }
 
 @media (min-width: 600px) {
