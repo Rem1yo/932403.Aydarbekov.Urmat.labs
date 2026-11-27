@@ -1,10 +1,11 @@
 {
   "name": "travel-site",
   "version": "1.0.0",
-  "description": "Сайт «Путешественник» на Node.js и Express",
+  "description": "Сайт «Путешественник» и каталог товаров на Node.js, Express и SQLite",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test test.js"
   },
   "author": "Урмат Айдарбеков",
   "license": "ISC",
