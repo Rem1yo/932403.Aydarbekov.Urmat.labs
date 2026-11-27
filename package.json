@@ -1,0 +1,14 @@
+{
+  "name": "travel-site",
+  "version": "1.0.0",
+  "description": "Сайт «Путешественник» на Node.js и Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Урмат Айдарбеков",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
