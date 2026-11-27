@@ -9,6 +9,7 @@
   "author": "Урмат Айдарбеков",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite3": "^13.2.0",
     "express": "^5.3.0"
   }
 }
