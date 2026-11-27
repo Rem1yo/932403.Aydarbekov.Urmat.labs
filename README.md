@@ -11,6 +11,9 @@
 | 3 | Вёрстка макета с помощью Flexbox и Grid | [lab3](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab3) |
 | 4 | Основы JavaScript | [lab4](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab4) |
 | 5 | DOM и взаимодействие с элементами страницы | [lab5](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab5) |
+| 6 | Введение в Node.js и базовый сервер на Express | [lab6](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab6) |
+| 7 | Работа с базой данных (SQLite) и CRUD-операции | [lab7](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab7) |
+| 8 | Итоговый мини-проект | [lab8](https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs/tree/lab8) |
 
 В каждой ветке есть свой README: задание, что сделано и как открыть страницу.
 
@@ -19,7 +22,7 @@
 ```bash
 git clone https://github.com/Rem1yo/932403.Aydarbekov.Urmat.labs.git
 cd 932403.Aydarbekov.Urmat.labs
-git switch lab5
+git switch lab8
 ```
 
 Автор: Урмат Айдарбеков
