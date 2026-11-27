@@ -469,3 +469,24 @@ body.dark footer {
     width: 100%;
   }
 }
+
+.time-output {
+  margin: 10px 0 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-heading);
+}
+
+.time-info {
+  margin: 4px 0 0;
+  color: var(--color-muted);
+}
+
+#time-format-btn {
+  width: auto;
+  padding: 10px 16px;
+}
+
+.time-error {
+  color: var(--color-heading);
+}

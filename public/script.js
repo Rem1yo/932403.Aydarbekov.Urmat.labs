@@ -175,6 +175,43 @@ function bindClick(id, handler) {
   button.addEventListener("click", handler);
 }
 
+let timeFormat = "24";
+
+async function loadServerTime() {
+  const output = findById("time-output");
+  const info = findById("time-info");
+  if (!output || !info) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/time?format=" + timeFormat);
+    if (!response.ok) {
+      throw new Error("Сервер ответил с кодом " + response.status);
+    }
+    const data = await response.json();
+    output.textContent = data.time;
+    output.classList.remove("time-error");
+    info.textContent = "Часовой пояс: " + data.timezone + ", формат: " + data.format;
+  } catch (error) {
+    output.textContent = "Не удалось получить время";
+    output.classList.add("time-error");
+    info.textContent = "Проверьте подключение к серверу. " + error.message;
+  }
+}
+
+function toggleTimeFormat() {
+  const button = findById("time-format-btn");
+  if (!button) {
+    return;
+  }
+
+  timeFormat = timeFormat === "24" ? "12" : "24";
+  button.textContent =
+    timeFormat === "24" ? "Показать в 12-часовом формате" : "Показать в 24-часовом формате";
+  loadServerTime();
+}
+
 function init() {
   loadSkills();
   applyTheme(readFromStorage(THEME_KEY));
@@ -183,6 +220,10 @@ function init() {
   bindClick("clear-skills-btn", clearSkills);
   bindClick("toggle-skills-btn", toggleSkillsVisibility);
   bindClick("theme-btn", toggleTheme);
+  bindClick("time-format-btn", toggleTimeFormat);
+
+  loadServerTime();
+  setInterval(loadServerTime, 1000);
 }
 
 init();

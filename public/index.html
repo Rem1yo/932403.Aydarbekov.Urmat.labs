@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>О себе - Урмат Айдарбеков</title>
+  <meta name="theme-color" content="#b35a12">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/images/icon-192.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
     #projects ol {
@@ -32,6 +35,7 @@
       <li><a href="#projects">Проекты</a></li>
       <li><a href="#place">Любимое место</a></li>
       <li><a href="#feedback">Обратная связь</a></li>
+      <li><a href="/about">Обо мне</a></li>
     </ul>
   </nav>
 
@@ -135,6 +139,14 @@
           </ol>
         </section>
 
+        <section id="server-time" class="block" aria-labelledby="server-time-title">
+          <h2 id="server-time-title">Время на сервере</h2>
+          <p>Время приходит с сервера по адресу <code>/api/time</code>.</p>
+          <p class="time-output" id="time-output" aria-live="polite">Загрузка...</p>
+          <p class="time-info" id="time-info"></p>
+          <button type="button" id="time-format-btn">Показать в 12-часовом формате</button>
+        </section>
+
         <section id="feedback" class="block">
           <h2>Обратная связь</h2>
           <form action="#" method="post">
@@ -169,5 +181,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="sw-register.js"></script>
 </body>
 </html>
