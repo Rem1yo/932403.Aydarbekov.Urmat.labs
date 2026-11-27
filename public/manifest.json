@@ -1,0 +1,23 @@
+{
+  "name": "Путешественник - Урмат Айдарбеков",
+  "short_name": "Путешественник",
+  "description": "Сайт о путешествиях и навыках",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5ebdc",
+  "theme_color": "#b35a12",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
