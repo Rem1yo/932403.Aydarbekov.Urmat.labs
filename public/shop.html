@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b35a12">
+  <title>Каталог товаров - Урмат Айдарбеков</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/images/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Каталог товаров</h1>
+    <p>Всё для путешествий</p>
+    <p class="cart-info">Корзина: <span id="cart-count">0</span></p>
+  </header>
+
+  <nav aria-label="Разделы сайта">
+    <ul class="nav-list">
+      <li><a href="/">Главная</a></li>
+      <li><a href="/shop">Каталог</a></li>
+      <li><a href="/about">Обо мне</a></li>
+    </ul>
+  </nav>
+
+  <main class="container shop">
+    <aside class="block shop-filters" aria-labelledby="filters-title">
+      <h2 id="filters-title">Фильтры</h2>
+      <form id="filters-form" novalidate>
+        <label for="filter-search">Поиск по названию</label>
+        <input type="search" id="filter-search" name="search" maxlength="100" placeholder="Например, рюкзак">
+
+        <label for="filter-category">Категория</label>
+        <select id="filter-category" name="category">
+          <option value="">Все категории</option>
+        </select>
+
+        <label for="filter-min-price">Цена от</label>
+        <input type="number" id="filter-min-price" name="minPrice" min="0" step="any" placeholder="0">
+
+        <label for="filter-max-price">Цена до</label>
+        <input type="number" id="filter-max-price" name="maxPrice" min="0" step="any" placeholder="Без ограничения">
+
+        <div class="shop-buttons">
+          <button type="submit" class="btn">Применить</button>
+          <button type="button" class="btn btn-secondary" id="reset-filters-btn">Сбросить</button>
+        </div>
+      </form>
+    </aside>
+
+    <section class="shop-catalog" aria-labelledby="catalog-title">
+      <div class="shop-toolbar">
+        <h2 id="catalog-title" tabindex="-1">Товары</h2>
+        <p id="catalog-total" aria-live="polite"></p>
+        <button type="button" class="btn" id="add-product-btn">Добавить товар</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <ul id="product-list" class="product-list" aria-busy="true"></ul>
+
+      <nav id="pagination" class="pagination" aria-label="Страницы каталога"></nav>
+    </section>
+  </main>
+
+  <dialog id="details-dialog" aria-labelledby="details-title">
+    <h2 id="details-title">Товар</h2>
+    <p id="details-category" class="product-category"></p>
+    <p id="details-description"></p>
+    <p id="details-price" class="product-price"></p>
+    <p id="details-stock"></p>
+    <button type="button" class="btn btn-secondary" id="details-close-btn">Закрыть</button>
+  </dialog>
+
+  <dialog id="product-dialog" aria-labelledby="product-dialog-title">
+    <h2 id="product-dialog-title">Товар</h2>
+    <form id="product-form" novalidate>
+      <label for="product-name">Название</label>
+      <input type="text" id="product-name" name="name" maxlength="100" required aria-describedby="form-error">
+
+      <label for="product-category">Категория</label>
+      <select id="product-category" name="categoryId" aria-required="true" aria-describedby="form-error"></select>
+
+      <label for="product-price">Цена, ₽</label>
+      <input type="number" id="product-price" name="price" min="0" max="1000000000" step="0.01" required aria-describedby="form-error">
+
+      <label for="product-stock">Остаток на складе</label>
+      <input type="number" id="product-stock" name="stock" min="0" max="1000000" step="1" required aria-describedby="form-error">
+
+      <label for="product-description">Описание</label>
+      <textarea id="product-description" name="description" rows="4" maxlength="1000" aria-describedby="form-error"></textarea>
+
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+
+      <div class="shop-buttons">
+        <button type="submit" class="btn" id="product-save-btn">Сохранить</button>
+        <button type="button" class="btn btn-secondary" id="product-cancel-btn">Отмена</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer>
+    <p>&copy; 2026 Урмат Айдарбеков</p>
+  </footer>
+
+  <script src="/storage.js"></script>
+  <script src="/shop.js"></script>
+  <script src="/sw-register.js"></script>
+</body>
+</html>

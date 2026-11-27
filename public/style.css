@@ -14,6 +14,8 @@
   --color-field: #ffffff;
   --color-field-border: #d9b88f;
   --color-field-focus: #fff6e9;
+  --color-danger: #a1260c;
+  --color-error-text: #a1260c;
   --font-main: Arial, sans-serif;
   --font-title: Georgia, serif;
 }
@@ -364,6 +366,7 @@ body.dark {
   --color-field: #1b1713;
   --color-field-border: #6b5a4a;
   --color-field-focus: #3a3128;
+  --color-error-text: #ff9d85;
 }
 
 body.dark footer {
@@ -489,4 +492,236 @@ body.dark footer {
 
 .time-error {
   color: var(--color-heading);
+}
+
+/* каталог товаров: сначала стили для телефона, потом для широких экранов */
+
+.shop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+.shop-filters {
+  margin-bottom: 0;
+}
+
+.shop-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-bottom: 16px;
+}
+
+.shop-toolbar h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  color: var(--color-heading);
+}
+
+.shop-toolbar p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.shop-catalog {
+  scroll-margin-top: 110px;
+}
+
+.shop-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.cart-info {
+  margin-top: 8px;
+}
+
+.btn {
+  width: auto;
+  margin-top: 0;
+  padding: 8px 14px;
+  font-size: 15px;
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-link);
+  background-color: transparent;
+  color: var(--color-link);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+  color: var(--color-link);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+}
+
+.btn-danger:hover {
+  background-color: var(--color-danger);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.page-current,
+.page-current:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+select {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid var(--color-field-border);
+  border-radius: 5px;
+  background-color: var(--color-field);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 16px;
+}
+
+.message:empty {
+  display: none;
+}
+
+.message {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  background-color: var(--color-surface);
+}
+
+.message-error {
+  border-left-color: var(--color-danger);
+  color: var(--color-error-text);
+  font-weight: bold;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-card,
+dialog {
+  overflow-wrap: anywhere;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+}
+
+.product-name {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 18px;
+}
+
+.product-card p,
+dialog p {
+  margin: 0;
+}
+
+.product-category,
+.out-of-stock {
+  color: var(--color-muted);
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-heading);
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.delete-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.empty-list {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* это тоже nav, поэтому отменяем липкое меню и рамку из стиля основной навигации */
+.pagination {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+  padding: 0;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+dialog {
+  width: min(92vw, 520px);
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+  margin-top: 0;
+  font-family: var(--font-title);
+  color: var(--color-heading);
+}
+
+dialog > p {
+  margin-bottom: 10px;
+}
+
+.form-error {
+  margin: 12px 0 0;
+  color: var(--color-error-text);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .shop {
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: start;
+  }
 }
